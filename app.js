@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 // Route to handle POST requests to /echo
 app.post('/echo', (req, res) => {
   const requestBody = JSON.stringify(req.body);
-  console.log('Request body:', requestBody);
+//   console.log('Request body:', requestBody);
+  console.log(`[log @${new Date().toISOString()}] ${requestBody}\n`)
 
   // Save the request body to a log file
   fs.appendFile('log.txt', `[${new Date().toISOString()}] ${requestBody}\n`, (err) => {
